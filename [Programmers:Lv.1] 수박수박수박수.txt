@@ -1,0 +1,30 @@
+# 길이가 n이고, 수박수박수박수....와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 수박수박을 리턴하고 3이라면 수박수를 리턴하면 됩니다.
+# 제한 조건
+# n은 길이 10,000이하인 자연수입니다.
+
+# 방법 1
+def solution(n):
+  if n > 10000:
+    return 'error'
+
+  answer = ''
+
+  for i in range(1, n+1):
+    if i % 2 == 0:
+      answer += '박'
+    else:
+      answer += '수'
+  return answer
+print(solution(3))
+  
+# 방법 2
+def water_melon1(n):
+  s = "수박" * (n)
+  return s[:n]  #s[:n]은 s[0]+s[1]+...+s[n]
+print(water_melon1(11))
+
+# 방법 3
+def water_melon2(n):
+  s = "수박" * (n//2) + "수" * (n%2)
+  return s
+print(water_melon2(11))
