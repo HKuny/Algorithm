@@ -1,0 +1,5 @@
+def solution(arr, cmd):
+    answer = []
+    for i,j,k in cmd:
+        answer.append(sorted(arr[i-1:j])[k-1])
+    return answer
